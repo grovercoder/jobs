@@ -13,6 +13,7 @@ from jobs.datastore import db
 
 MIN_KEYWORDS_THRESHOLD = 2
 nltk.download('punkt_tab')
+nltk.download('stopwords')
 
 def get_context_keywords(context="IT"):
     context_keywords = []
