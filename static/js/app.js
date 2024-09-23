@@ -43,7 +43,7 @@ function submit_resume(event) {
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
 
-    fetch('./resume', {
+    fetch('/resume', {
         method: 'POST',
         body: formData
     })
@@ -65,7 +65,7 @@ function get_report() {
     const resumeContent = localStorage.getItem('resume');
 
     if (resumeContent) {
-      fetch('./report', {
+      fetch('/report', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
