@@ -80,21 +80,9 @@ def create_app():
 
     return app
 
-def gunicorn():
-    return create_app()
-
 def run():
     app = create_app()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=9876)
     
-def serve():
-    from gunicorn.app.wsgiapp import WSGIApplication
-    application = WSGIApplication()
-    application.load_config()
-    application.cfg.set('bind', '0.0.0.0:5004')
-    application.cfg.set('workers', '3')
-
-    application.run()
-
 
 WEB_APP = create_app()
