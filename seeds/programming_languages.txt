@@ -1,0 +1,368 @@
+4D
+4th Dimension
+ABAP
+ABC
+ABL
+AHK
+APL
+AS1
+AS2
+AS3
+ATLAS
+ActionScript
+Ada
+Advanced Business Language
+Agilent VEE
+Algol
+Alice
+Angelscript
+Apex
+Applescript
+Arc
+AspectJ
+Assembly
+Assembly language
+AutoHotkey
+AutoIt
+AutoLISP
+Automator
+Avenue
+Awk
+B4X
+BBC BASIC
+BCPL
+BETA
+Ballerina
+Bash
+Basic
+Blitz Basic
+BlitzBasic
+BlitzMax
+Boo
+Bourne shell
+Brainfuck
+C
+C Sharp
+C shell
+C#
+C#.NET
+C++
+C++/CLI
+C-Omega
+C-Sharp
+CFML
+CHILL
+CIL
+CL
+CLIPS
+CLLE
+CLU
+COBOL
+COMAL
+CORAL 66
+CSharp
+CSharp.NET
+Caml
+Carbon
+Ceylon
+Ch
+Chapel
+Citrine
+Clarion
+Clean
+Clipper
+Clojure
+ClojureScript
+Cobra
+CoffeeScript
+ColdFusion
+Common Lisp
+Crystal
+Csh
+Curl
+D
+DBL
+DCL
+DIBOL
+Dart
+Delphi
+Delphi.NET
+DwScript
+Dylan
+E
+ECMAScript
+EGL
+EXEC
+Eiffel
+Elisp
+Elixir
+Elm
+Emacs Lisp
+Emerald
+Enterprise script
+Erlang
+Etoys
+Euphoria
+F Sharp
+F#
+F-Sharp
+FSharp
+Factor
+Falcon
+Fantom
+Felix
+Forth
+Fortran
+Fortress
+Fox Pro
+FoxPro
+FreeBASIC
+GAMS
+GLSL
+GML
+GNU Octave
+GPATH
+GSQL
+Gambas
+GameMaker Language
+Gawk
+Genie
+Go
+Golang
+Gosu
+Groovy
+Groovy++
+HPL
+Hack
+Harbour
+Haskell
+Haxe
+Heron
+HyperTalk
+IDL
+ILERPG
+INTERCAL
+Icon
+Idris
+Inform
+Informix-4GL
+Io
+Ioke
+J
+J#
+JADE
+JS
+JScript
+JScript.NET
+Java
+JavaFX Script
+JavaScript
+Julia
+Julialang
+Korn shell
+Kotlin
+LPC
+LabVIEW
+Ladder Logic
+Lasso
+Limbo
+Lingo
+Lisp
+LiveCode
+Logo
+LotusScript
+Lua
+LuaJIT
+Lustre
+M4
+MAD
+MANTIS
+MATLAB
+MAXScript
+MDX
+MEL
+ML
+MOO
+MQL4
+MQL5
+MS-DOS batch
+MUMPS
+Magic
+Magik
+Malbolge
+Maple
+Mathematica
+Mawk
+Max/MSP
+Mercury
+Miva
+Modula-2
+Modula-3
+Mojo
+Monkey
+Moto
+NATURAL
+NQC
+NSIS
+NXT-G
+Nawk
+Nemerle
+NetLogo
+Nim
+Nimrod
+Nix
+OCaml
+OPL
+Oberon
+Object Pascal
+Object Rexx
+Objective Caml
+Objective-C
+Occam
+Open Object Rexx
+OpenCL
+OpenEdge
+Oxygene
+Oz
+PD
+PHP
+PILOT
+PL/1
+PL/I
+PL/SQL
+POV-Ray
+PS
+PWCT
+Paradox
+Pascal
+Perl
+Perl 6
+Pike
+Pliant
+Pony
+PostScript
+PowerBasic
+PowerScript
+PowerShell
+Processing
+Programming Without Coding Technology
+Progress
+Progress 4GL
+Prolog
+Pure Data
+PureBasic
+Python
+Q
+R
+REALbasic
+REBOL
+REXX
+RPG
+RPG4
+RPG400
+RPGII
+RPGIII
+RPGIV
+RPGLE
+Racket
+Raku
+Red
+Revolution
+Ring
+Ruby
+Rust
+Rustlang
+S
+S-PLUS
+SAS
+SIGNAL
+SML
+SNOBOL
+SPARK
+SPSS
+SQL
+SQR
+SSJS
+Sather
+Scala
+Scheme
+Scratch
+Seed7
+Simula
+Simulink
+Slate
+Small Basic
+Smalltalk
+Smarty
+Snap!
+Solidity
+Squeak
+Squirrel
+Standard ML
+Stata
+Structured Text
+Suneido
+SuperCollider
+Swift
+Synergy/DE
+SystemVerilog
+T-SQL
+TACL
+TOM
+TS
+TSQL
+Tcl
+Tcl/Tk
+Tex
+Transact-SQL
+TypeScript
+Uniface
+VB
+VB.NET
+VB6
+VBA
+VBScript
+VFP
+VFPA
+VHDL
+Vala
+Verilog
+Visual Basic
+Visual Basic .NET
+Visual Basic.NET
+WASM
+WebAssembly
+WebDNA
+Whitespace
+Wolfram
+X++
+X10
+XBase++
+XC
+XPL
+XQuery
+XSLT
+Xen
+Xojo
+Xtend
+Yorick
+Z shell
+Zig
+bc
+cT
+cg
+crystallang
+dlang
+julia-lang
+ksh
+obj-c
+objc
+ooRexx
+sed
+sh
+tcsh
+thinBasic
+xBase
+yacc
+zlang
+zsh

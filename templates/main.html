@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Report</title>
+
+    <style>
+        .row {
+            display: grid;
+            grid-template-columns:  120px 1fr 1fr;
+            line-height: 150%;
+        }
+
+        .jobs-wrapper .row:nth-child(odd) {
+            background-color: #eef;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <div>Generated: {{ generated_at }}</div>
+        <div title="jobs with a score > 0">Result Count: {{ result_count }}</div>
+    </div>
+    <div id="jobs">
+        <div class="header row">
+            <div>Source</div>
+            <div>Job Posting</div>
+            <div>Score</div>
+        </div>
+
+        <div class="jobs-wrapper">
+            {% for row in scores %}
+            <div class="job row">
+                <div class="source">{{ row["site"] }}</div>
+                <div class="job-link"><a href="{{ row['url'] }}" target="_blank">{{ row['title'] }}</a></div>
+                <div class="score">{{ row["score"]["total"] }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 150%;
+}
+
+details > summary {
+  font-weight: bold;
+}
+
+#top {
+  padding: 0 1em;
+}
+#top .overview {
+  margin-left: 1em;
+}
+
+#report .info {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  background-color: #333;
+  color: white;
+  padding: 1em;
+}
+#report .row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  line-height: 150%;
+  padding: 0.2em;
+}
+#report .row a {
+  text-decoration: none;
+  font-weight: bold;
+}
+#report .row a:hover {
+  text-decoration: underline;
+}
+#report .header {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+#report .jobs-wrapper .row:nth-child(odd) {
+  background-color: #eee;
+}/*# sourceMappingURL=style.css.map */

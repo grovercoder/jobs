@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Report</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/app.js"></script>
+</head>
+<body>
+    <h1>IT Job Report - Calgary / Canada </h1>
+
+    <div id="top">
+        <details id="detail-overview" open>
+            <summary>Overview</summary>
+            <div class="overview">
+                <p>Expand the RESUME section below and upload a text version of your resume.</p>
+                <p>The resume is sent to the server for keyword extraction.  Your resume text and keywords are stored into the browsers local storage.  We do NOT store your resume on the server.</p>
+                <p>We then read the brower's copy of your resume text and generate the Job Report for you.</p>
+                <p>After the initial upload you can just reload this page to see the most recent report.</p>
+                <p>
+                    <strong>Security note:</strong>
+                    We do not need your full resume.  You can safely exclude any contact or other info that you do not wish to upload.
+                </p>
+            </div>
+        </details>
+    
+        <details id="detail-resume" open>
+            <summary>Resume</summary>
+            <form id="resume-form">
+                <p>Upload your resume:</p>
+                <input type="file" id="resume-file">
+                <button type="submit">Submit</button>
+            </form>
+    
+        </details>
+    
+        <details>
+            <summary>Resume Text</summary>
+            <div id="resume-content">
+                Please upload a resume
+            </div>
+        </details>
+        
+        <details>
+            <summary>Resume keywords</summary>
+            <div id="keyword-content">
+                Please upload a resume
+            </div>
+        </details>
+    </div>
+
+    <div id="report">
+    </div>
+
+</body>
+</html>

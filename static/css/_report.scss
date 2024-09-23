@@ -1,0 +1,36 @@
+
+#report {
+    .info {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        background-color: #333;
+        color: white;
+        padding: 1em;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns:  120px 1fr 1fr;
+        line-height: 150%;
+        padding: 0.2em;
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .header {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+    }
+
+    .jobs-wrapper .row:nth-child(odd) {
+        background-color: #eee;
+    }
+}
