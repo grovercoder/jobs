@@ -1,8 +1,10 @@
+import os
 import time
 import json
 import nltk
 from collections import Counter
 from nltk.corpus import stopwords
+import nltk.downloader
 from nltk.stem import PorterStemmer
 from jinja2 import Environment, FileSystemLoader
 
@@ -12,8 +14,7 @@ from jobs.models import Job, ContextGroup
 from jobs.datastore import db
 
 MIN_KEYWORDS_THRESHOLD = 2
-nltk.download('punkt_tab')
-nltk.download('stopwords')
+
 
 def get_context_keywords(context="IT"):
     context_keywords = []
@@ -344,3 +345,22 @@ def create_report_html(scores):
     logger.info(f'generated {report_file}')
     logger.info(f'  Click to file://{report_file} to open in browser')
 
+
+
+def download_resources():
+    dldr = nltk.downloader.Downloader()
+    target = dldr.default_download_dir()
+    print(f'DEFAULT NLTK DIR: {target}')
+
+    # Ensure you have the necessary permissions to modify the data directory
+    os.chmod(target, 0o777)  # Grant temporary write permissions (caution)
+
+    # Download NLTK data
+    nltk.download('punkt_tab')
+    nltk.download('stopwords')
+
+    # Revoke write permissions (optional)
+    os.chmod(target, 0o755)  # Revert to read-only permission
+
+
+download_resources()
