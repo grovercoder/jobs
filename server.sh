@@ -10,4 +10,4 @@ cd $SCRIPT_DIR
 source .venv/bin/activate
 
 # launch the server
-gunicorn --config gunicorn_config.py jobs.server:WEB_APP
+$SCRIPT_DIR/.venv/bin/gunicorn --config $SCRIPT_DIR/gunicorn_config.py jobs.server:WEB_APP
