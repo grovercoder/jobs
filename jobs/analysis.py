@@ -350,15 +350,18 @@ def create_report_html(scores):
 def download_resources():
     dldr = nltk.downloader.Downloader()
     target = dldr.default_download_dir()
-    print(f'DEFAULT NLTK DIR: {target}')
 
     # Ensure you have the necessary permissions to modify the data directory
     os.chmod(target, 0o777)  # Grant temporary write permissions (caution)
 
-    # Download NLTK data
-    nltk.download('punkt_tab')
-    nltk.download('stopwords')
+    # List of resources to check and download
+    resources = ['punkt', 'stopwords']
 
+    for resource in resources:
+        if not dldr.is_installed(resource) or dldr.is_stale(resource):
+            print(f'Downloading {resource}...')
+            nltk.download(resource)
+        
     # Revoke write permissions (optional)
     os.chmod(target, 0o755)  # Revert to read-only permission
 
