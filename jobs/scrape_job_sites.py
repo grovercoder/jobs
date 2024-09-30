@@ -55,23 +55,6 @@ def get_browser_page(browser):
     # attempt to bypass anti-bot mechanisms
     page.evaluate("navigator.wedriver = false")
     
-    # page.evaluate_on_new_document('''() => {
-    #     Object.defineProperty(navigator, 'webdriver', {
-    #         get: () => false,
-    #     });
-    # }''')
-
-    # page.evaluate_on_new_document('''() => {
-    #     // WebGL Fingerprint Spoofing
-    #     const getContext = HTMLCanvasElement.prototype.getContext;
-    #     HTMLCanvasElement.prototype.getContext = function (type) {
-    #         if (type === 'webgl') {
-    #             return null;
-    #         }
-    #         return getContext.apply(this, arguments);
-    #     };
-    # }''')
-
     return page
 
 def store_job_links(job_links=[], site=None) -> int:
@@ -81,6 +64,10 @@ def store_job_links(job_links=[], site=None) -> int:
             current_url = current
             if site:
                 current_url = urljoin(site.url, current)
+
+            # skip URLs we have already seen
+            if ExpiredPosting.exists(current_url):
+                continue
 
             jq = JobQueue(url=current_url)
             db.session.add(jq)
@@ -211,7 +198,7 @@ def get_queued_jobs():
                 bad_sites = bad_sites + 1
                 continue
 
-            if Job.url_exists(current.url):
+            if Job.url_exists(current.url) or ExpiredPosting.exists(current.url):
                 remove_queued_job(current)
                 previously_seen = previously_seen + 1
                 continue

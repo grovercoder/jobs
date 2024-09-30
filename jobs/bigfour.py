@@ -1,7 +1,7 @@
 import random
 import time
 from jobspy import scrape_jobs
-from jobs.models import Job, SearchTerms, Location
+from jobs.models import Job, SearchTerms, Location, ExpiredPosting
 from jobs.datastore import db
 from jobs.job_logger import logger
 
@@ -56,7 +56,7 @@ def scan_big4(randomize=True):
                     source = row.get("site")
                 )
 
-                if not Job.exists(job):            
+                if not Job.exists(job) and not ExpiredPosting.exists(job.url):            
                     db.session.add(job)
                     db.session.commit()
 

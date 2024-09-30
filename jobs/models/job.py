@@ -69,9 +69,15 @@ class Job(db.Base):
         return db.session.query(cls).all()
     
     @classmethod
-    def purge_old_jobs(cls):
+    def old_jobs(cls, threshold_days=3):
         now = int(time.time() * 1000)
-        threshold = now - (7 * 24 * 60 * 60 * 1000)
+        threshold = now - (threshold_days * 24 * 60 * 60 * 1000)
+        return db.session.query(cls).filter(cls.last_modified < threshold).all()
+
+    @classmethod
+    def purge_old_jobs(cls, threshold_days=3):
+        now = int(time.time() * 1000)
+        threshold = now - (threshold_days * 24 * 60 * 60 * 1000)
         db.session.query(cls).filter(cls.last_modified < threshold).delete()
         
 # Calculate the description signature anytime we insert or update the record

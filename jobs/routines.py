@@ -18,17 +18,22 @@ def clear_job_queue():
     logger.info("deleted job_queue records")
 
 def load_big4(randomize=True):
+    logger.info('Removing old postings')
+    purge_old_jobs()
+
     logger.info('Loading jobs from big4')
     scan_big4(randomize=randomize)
 
 def load_sites(randomize=True):
+    logger.info('Removing old postings')
+    purge_old_jobs()
+    
     logger.info('Finding Job URLs from listing sites')
     scrape_job_urls(randomize=randomize)
 
 def scan_queued_jobs():
     logger.info('Retrieving Job Details from queued URLs')
     get_queued_jobs()
-
 
 def collect_job_urls():
     load_big4()
@@ -73,8 +78,22 @@ def compare_file(target, context="IT"):
     scores = generate_file_scores(target, context)
     create_report_html(scores)
 
-def purge_old_jobs():
-    Job.purge_old_jobs()
+def purge_old_jobs(threshold_days=3):
+    old_postings = Job.old_jobs(threshold_days)
+    logger.info(f'{len(old_postings)} old postings found')
+    for posting in old_postings:
+        expired = ExpiredPosting(url=posting.url)
+        
+        try:
+            db.session.add(expired)
+            db.session.delete(posting)
+            db.session.flush()
+        except:
+            db.session.rollback()
+            db.session.flush()
+        
+    db.session.commit()
+    logger.info('Old postings removed')
 
 def rescan_job_keywords():
     ck = get_context_keywords('IT')

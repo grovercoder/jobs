@@ -1,7 +1,7 @@
 ###############################
 # Application specific settings
 ###############################
-data.db
+*.db
 report.html
 !templates/report.html
 # Created by https://www.toptal.com/developers/gitignore/api/python
