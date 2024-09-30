@@ -6,3 +6,4 @@ from .search_terms import SearchTerms
 from .context_group import ContextGroup
 from .context_keyword import ContextKeyword
 from .context_group_keyword import ContextGroupKeyword
+from .expired_posting import ExpiredPosting
