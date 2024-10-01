@@ -1,5 +1,7 @@
 
 #report {
+    
+    
     .info {
         display: grid;
         grid-template-columns: 180px 1fr;
@@ -7,12 +9,23 @@
         color: white;
         padding: 1em;
     }
-
+    
     .row {
         display: grid;
         grid-template-columns:  120px 1fr 1fr;
         line-height: 150%;
         padding: 0.2em;
+        border: 1px solid transparent;
+        
+        &:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        &.header {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
 
         a {
             text-decoration: none;
@@ -22,15 +35,16 @@
                 text-decoration: underline;
             }
         }
+
+        &:hover {
+            background-color: #ccc;
+        }
+
+        &.current {
+            border: 1px solid green;
+            background-color: #b3ffb3;
+        }
     }
 
-    .header {
-        background-color: black;
-        color: white;
-        font-weight: bold;
-    }
-
-    .jobs-wrapper .row:nth-child(odd) {
-        background-color: #eee;
-    }
+    
 }

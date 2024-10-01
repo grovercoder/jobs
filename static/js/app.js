@@ -77,11 +77,29 @@ function get_report() {
         // Handle the response data
         const gui = get_gui()
         gui.report.innerHTML = data
+        // apply handlers to the newly added data
+        add_report_handlers()
       })
       .catch(error => {
         console.error('Error:', error);
       });
     }
+}
+
+function add_report_handlers() {
+  const gui = get_gui()
+
+  gui.report.addEventListener('click', event => {
+    const row = event.target.closest('.row')
+    const last_selected = document.querySelector('.current')
+    if (last_selected) {
+      last_selected.classList.remove('current')
+    }
+    if (row) {
+      row.classList.add('current')
+    }
+    
+  })
 }
 
 function rememberDetailsState() {
@@ -96,7 +114,6 @@ function rememberDetailsState() {
     gui = get_gui()    
     if (gui.detail_overview) {
       const storedState = localStorage.getItem('detail_overview');
-      console.log({storedState})
   
       if (storedState !== null) {
         gui.detail_overview.open = storedState === 'true';

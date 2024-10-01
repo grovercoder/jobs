@@ -27,6 +27,15 @@ details > summary {
   grid-template-columns: 120px 1fr 1fr;
   line-height: 150%;
   padding: 0.2em;
+  border: 1px solid transparent;
+}
+#report .row:nth-child(odd) {
+  background-color: #eee;
+}
+#report .row.header {
+  background-color: black;
+  color: white;
+  font-weight: bold;
 }
 #report .row a {
   text-decoration: none;
@@ -35,11 +44,10 @@ details > summary {
 #report .row a:hover {
   text-decoration: underline;
 }
-#report .header {
-  background-color: black;
-  color: white;
-  font-weight: bold;
+#report .row:hover {
+  background-color: #ccc;
 }
-#report .jobs-wrapper .row:nth-child(odd) {
-  background-color: #eee;
+#report .row.current {
+  border: 1px solid green;
+  background-color: #b3ffb3;
 }/*# sourceMappingURL=style.css.map */
