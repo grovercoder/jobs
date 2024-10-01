@@ -1,7 +1,7 @@
 import random
 import time
 from jobspy import scrape_jobs
-from jobs.models import Job, SearchTerms, Location, ExpiredPosting
+from jobs.models import Job, SearchTerms, Location, ExpiredPosting, Company
 from jobs.datastore import db
 from jobs.job_logger import logger
 
@@ -40,6 +40,10 @@ def scan_big4(randomize=True):
                 
             )
     
+            logger.info("Storing Big4 Job data")
+            if ('company_url' in jobs.columns):
+                jobs['company_url'] = jobs['company_url'].fillna('')
+
             current_jobs = jobs.to_dict(orient='records')
             for row in current_jobs:
                 desc = row.get("description")
@@ -55,10 +59,30 @@ def scan_big4(randomize=True):
                     description = desc.strip(),
                     source = row.get("site")
                 )
-
+               
                 if not Job.exists(job) and not ExpiredPosting.exists(job.url):            
                     db.session.add(job)
                     db.session.commit()
+
+                if row.get('company'):
+                    company_website = row.get('company_url_direct')
+                    if not company_website and row.get('company_url') and str(row.get('site')) not in str(row.get('company_url')):
+                        company_website = row.get('company_url')
+
+                    company = Company(
+                        name = row.get('company'),
+                        website = company_website,
+                        location = location,
+                    )
+                    
+                    try:
+                        db.session.add(company)
+                        db.session.commit()
+                    except:
+                        db.session.rollback()
+                        db.session.flush()
+                else:
+                    print('no company supplied')
 
             # pause to be kind to the servers
             time.sleep(5)
